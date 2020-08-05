@@ -1,5 +1,5 @@
 {% set name = "PyHive" %}
-{% set version = "0.6.2" %}
+{% set version = "0.6.3" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: cbde78c49e76a0bc84c7ccea05373b54ed456bcf86dd978a2eaea10ab7357610
+  sha256: 00fe5b9a4289b5d40d3ccb7bad52a76982f485c7350a792a80d31277d26a7fd1
 
 build:
   number: 0
