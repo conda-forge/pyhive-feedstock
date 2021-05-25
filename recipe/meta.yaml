@@ -11,17 +11,17 @@ source:
   sha256: 00fe5b9a4289b5d40d3ccb7bad52a76982f485c7350a792a80d31277d26a7fd1
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python
+    - python >=3.6
   run:
     - future
-    - python
+    - python >=3.6
     - python-dateutil
     - thrift >=0.10.0
     - thrift_sasl >0.2.1
@@ -51,3 +51,4 @@ about:
 extra:
   recipe-maintainers:
     - mariusvniekerk
+    - bandersen23
