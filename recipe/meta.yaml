@@ -19,6 +19,8 @@ requirements:
   host:
     - pip
     - python {{ python_min }}
+    # https://github.com/apache/kyuubi/commit/996cdccc097e046fc2f61c7be5d0069b6c8eda9b
+    - setuptools <72
   run:
     - future
     - python >={{ python_min }}
