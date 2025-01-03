@@ -7,21 +7,23 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 585beff9578a61b99aed47140fec97e26323e8c685a5b5d0c8550a8ebf8a24e0
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
+    # https://github.com/apache/kyuubi/commit/996cdccc097e046fc2f61c7be5d0069b6c8eda9b
+    - setuptools <72
   run:
     - future
-    - python >=3.6
+    - python >={{ python_min }}
     - python-dateutil
     - thrift >=0.10.0
     - thrift_sasl >0.2.1
@@ -36,6 +38,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://pypi.org/project/PyHive/
